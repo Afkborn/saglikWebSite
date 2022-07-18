@@ -2,3 +2,21 @@
   font-family: 'Raleway', sans-serif;
 }
 
+.socialMedia:hover {
+  opacity: 0.7;
+}
+
+.socialMedia {
+  /*padding: 20px;*/
+  font-size: 20px;
+  /*width: 50px;*/
+  color: #ffffff;
+  text-align: center;
+  /*text-decoration: none;*/
+  text-decoration: none;
+}
+
+.socialMedia:link {
+  text-decoration: none;
+}
+

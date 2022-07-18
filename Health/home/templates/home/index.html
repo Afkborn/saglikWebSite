@@ -6,16 +6,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Home - Brand</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'home/favicon.png' %}"/>
     <link rel="stylesheet" href="{% static 'home/bootstrap/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'home/fonts/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'home/fonts/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'home/fonts/fontawesome5-overrides.min.css' %}">
     <link rel="stylesheet" href="{% static 'home/css/Contact-form-simple.css' %}">
-    <link rel="stylesheet" href="{% static 'home/css/Contact-Form-v2-Modal--Full-with-Google-Map.css' %}">
     <link rel="stylesheet" href="{% static 'home/css/Contact-white--Gmap-Contact.css' %}">
     <link rel="stylesheet" href="{% static 'home/css/Contact-white--Gmap-styles.css' %}">
     <link rel="stylesheet" href="{% static 'home/css/Contact-white--Gmap.css' %}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script&amp;display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css">
+
+
 </head>
 
 <body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="54">
@@ -31,7 +35,7 @@
             </div>
         </div>
     </nav>
-    <header class="masthead" style="background: url() center / cover;">
+    <header class="masthead" style="background: url('../static/home/img/fddff-min.jpg') center / cover;">
         <div class="container">
             <div class="intro-text">
                 <div class="intro-lead-in"></div>
@@ -104,7 +108,7 @@
             <div class="row justify-content-center align-items-center">
                 <div class="col-sm-4">
                     <div class="team-member"><img class="rounded-circle mx-auto" src="{% static 'home/img/doctor/ahmet_karaman.jpg' %}">
-                        <h4><strong>Ahmet Karaman</strong><br></h4>
+                        <h4>Ahmet Karaman<br></h4>
                         <p class="text-muted">Diş Hekimi<br></p>
                     </div>
                 </div>
@@ -116,7 +120,7 @@
                 </div>
                 <div class="col-sm-4">
                     <div class="team-member"><img class="rounded-circle mx-auto" src="{% static 'home/img/doctor/busra_ozgunesli.jpg' %}">
-                        <h4><strong>Büşra Özgüneşli</strong><br></h4>
+                        <h4>Büşra Özgüneşli<br></h4>
                         <p class="text-muted">Diş Hekimi<br></p>
                     </div>
                 </div>
@@ -129,19 +133,46 @@
             </div>
         </div>
     </section>
-    <section id="contact" style="background-image:url('');">
-        <div class="container">
-            <div class="row">
+    <section id="contact" style="background-image:url('../static/home/img/map-image.jpg');">
+        <div class="container" style="color: rgb(255,255,255);">
+            <div class="row gx-0 justify-content-center align-items-center">
                 <div class="col-lg-12 text-center">
-                    <h2 class="text-uppercase section-heading" style="font-weight: bold;">İletişİm Bİlgİlerİ</h2>
+                    <h2 class="text-uppercase section-heading" style="font-weight: bold;">İletİşİm Bİlgİlerİ</h2>
                 </div>
             </div>
-            <div class="row align-items-center">
-                <div class="col">
-                    <div class="border rounded-0" style="height: 350px;width: 514px;"></div>
+            <div class="row gx-1 justify-content-center align-items-center">
+                <div class="col-8 col-sm-4">
+                    <div style="height: 100%;">
+                        <div class="row" style="margin-right: 0px;margin-left: 0px;">
+                            <div class="col"><i class="fas fa-phone-alt" style="font-size: 41px;width: 100%;text-align: center;"></i>
+                                <div class="row" style="text-align: center;">
+                                    <div class="col"><a class="socialMedia" href="tel:+90 542 113 5901" style="width: 100%;">+90 (542) 113 5901</a>
+                                        <p></p><a class="socialMedia" href="tel:+90 542 113 5902" style="width: 100%;">+90 (542) 113 5902</a>
+                                        <p></p><a class="socialMedia" href="tel:+90 542 113 5903" style="width: 100%;">+90 (542) 113 5903</a>
+                                        <p></p><a class="socialMedia" href="tel:+90 216 514 9898" style="width: 100%;">+90 (216) 514 9898</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-right: 0px;margin-left: 0px;height: 50%;">
+                            <div class="col align-self-center">
+                                <div class="row gx-4 gy-1" style="margin: 0px;margin-top: 25%;text-align: center;">
+                                    <div class="col"><a class="socialMedia" href="https://www.facebook.com/MODELDENTISTANBUL/" target="_blank"><i class="fab fa-facebook" style="font-size: 32px;"></i></a></div>
+                                    <div class="col"><a class="socialMedia" href="#" target=""><i class="fab fa-twitter" style="font-size: 32px;"></i></a></div>
+                                    <div class="col"><a class="socialMedia" href="https://www.instagram.com/modeldentistanbul/" target="_blank"><i class="fab fa-instagram" style="font-size: 32px;"></i></a></div>
+                                    <div class="col"><a class="socialMedia" href="#" target=""><i class="fab fa-youtube" style="font-size: 32px;"></i></a></div>
+                                </div>
+                            </div>
+                            <div class="col" style="margin-top: 10px;"><i class="fas fa-mail-bulk" style="width: 100%;text-align: center;font-size: 33px;height: 32px;"></i>
+                                <p></p><a class="socialMedia" href="mailto:info@modelistdent.com">Bilgi almak için tıklayın&nbsp;</a>
+                                <p></p><a class="socialMedia" href="mailto:randevu@modelistdent.com">Randevu almak için tıklayın</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-auto">
-                    <div class="border rounded-0"></div>
+                <div class="col-9 col-sm-4">
+                    <div style="height: 100%;width: 100%;"><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12058.593785852067!2d29.1575522!3d40.9234535!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb35592ca6dd4e838!2sModelist%20Dent!5e0!3m2!1str!2str!4v1658165239631!5m2!1str!2str" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
                 </div>
             </div>
         </div>
@@ -158,7 +189,6 @@
     <script src="{% static 'home/bootstrap/js/bootstrap.min.js' %}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js"></script>
     <script src="{% static 'home/js/agency.js' %} "></script>
-    <script src="{% static 'home/js/Contact-Form-v2-Modal--Full-with-Google-Map.js' %}  "></script>
     <script src="{% static 'home/js/Lightbox-Gallery.js' %}"></script>
 </body>
 
