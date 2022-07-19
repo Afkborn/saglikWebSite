@@ -112,6 +112,7 @@ LANGUAGE_CODE = 'tr' #default language
 LANGUAGES = (
   ('tr', _('Turkish')),
   ('de', _('Dutch')),
+  ('en', _('English')),
 )
 
 TIME_ZONE = 'UTC'

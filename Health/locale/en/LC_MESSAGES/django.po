@@ -1,0 +1,121 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-19 19:42+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\Health\settings.py:113
+msgid "Turkish"
+msgstr "Turkish"
+
+#: .\Health\settings.py:114
+msgid "Dutch"
+msgstr "Dutch"
+
+#: .\home\templates\home\index.html:28 .\home\templates\home\index.html:48
+msgid "Hizmetlerimiz"
+msgstr "Our services"
+
+#: .\home\templates\home\index.html:29
+msgid "Hakkımızda"
+msgstr "About us"
+
+#: .\home\templates\home\index.html:30 .\home\templates\home\index.html:102
+msgid "Doktorlarımız"
+msgstr "Our doctors"
+
+#: .\home\templates\home\index.html:31
+msgid "İletişim"
+msgstr "Communication"
+
+#: .\home\templates\home\index.html:53
+msgid "Kanal Tedavisi"
+msgstr "Root Canal Treatment"
+
+#: .\home\templates\home\index.html:54
+msgid ""
+"Kanal Tedavisi enfekte olmuş veya çürümüş dişleri onararak kurtarmak için "
+"kullanılan bir tedavi yöntemidir."
+msgstr "Root canal treatment is a treatment method used to repair and save infected or decayed teeth."
+
+#: .\home\templates\home\index.html:57
+msgid "Implant Tedavisi"
+msgstr "Implant Treatment"
+
+#: .\home\templates\home\index.html:58
+msgid ""
+"Implant eksik dişlerin yerine konması amacıyla, çene içerisine yerleştirilen "
+"çoğunlukla vida şeklindeki yapay bir diş köküdür"
+msgstr "An implant is an artificial tooth root, mostly screw-shaped, placed in the jaw to replace missing teeth."
+
+#: .\home\templates\home\index.html:61
+msgid "Diş Beyazlatma"
+msgstr "Teeth whitening"
+
+#: .\home\templates\home\index.html:62
+msgid ""
+"Diş Beyazlatma dişlerin yüzeyindeki gözenekli mine yapısında oluşan renkli, "
+"organik ve inorganik maddelerin diş beyazlatma jelleri ile giderilmesi "
+"işlemidir"
+msgstr "Teeth Whitening is the process of removing colored, organic and inorganic substances formed in the porous enamel structure on the surface of the teeth with tooth whitening gels."
+
+#: .\home\templates\home\index.html:65
+msgid "Çok daha fazlası..."
+msgstr "Much more..."
+
+#: .\home\templates\home\index.html:66
+msgid ""
+"Modelist Dent, diş estetiğindeki uzman deneyimi ve bir çok işlemi ile "
+"hizmetinizde"
+msgstr "Modelist Dent is at your service with its expert experience in dental aesthetics and many procedures."
+
+#: .\home\templates\home\index.html:77
+msgid "Biz Kimiz?"
+msgstr "Who are we?"
+
+#: .\home\templates\home\index.html:78
+msgid ""
+"Merhabalar; Kliniğimiz İstanbul-Pendik’te 2020 yılında açılmıştır. Uzman "
+"kadromuz ile sizlere en iyi hizmeti vermek için çalışıyoruz. Kliniğimizde; "
+"Kanal tedavisi, İmplant, Estetik Dolgular, Lamine, Zirconyum Kaplama, "
+"Porselen Kaplama, (Periodontoloji) Diş Eti Hastalıkları Tedavisi, Cerrahi "
+"Diş Çekimi, Diş Estetiği, diş tedavilerini başarılı bir şekilde "
+"gerçekleştiriyoruz. Kalitemizden ödün vermeden siz değerli hastalarımıza "
+"hizmet veriyoruz.Modelist hem yurtdışından hem yurtiçinden gelen hastaları "
+"için büyük kolaylıklar ve hizmetler sağlıyor."
+msgstr "Hello; Our clinic was opened in Istanbul-Pendik in 2020. We are working to give you the best service with our expert staff. In our clinic; We successfully perform root canal treatment, Implant, Aesthetic Fillings, Laminate, Zirconium Coating, Porcelain Coating, (Periodontology) Gum Disease Treatment, Surgical Tooth Extraction, Dental Aesthetics, dental treatments. Without compromising our quality, we serve our valued patients. Modelist provides great convenience and services for both domestic and foreign patients."
+
+#: .\home\templates\home\index.html:84
+msgid "Galeri"
+msgstr "Gallery"
+
+#: .\home\templates\home\index.html:110 .\home\templates\home\index.html:116
+#: .\home\templates\home\index.html:122 .\home\templates\home\index.html:128
+msgid "Diş Hekimi"
+msgstr "Dentist"
+
+#: .\home\templates\home\index.html:138
+msgid "İletişim Bilgileri"
+msgstr "Contact information"
+
+#: .\home\templates\home\index.html:165
+msgid "Bilgi almak için tıklayın"
+msgstr "Click for information"
+
+#: .\home\templates\home\index.html:166
+msgid "Randevu almak için tıklayın"
+msgstr "Click to make an appointment"
