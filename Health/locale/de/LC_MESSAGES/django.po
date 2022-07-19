@@ -1,0 +1,127 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-19 19:18+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+
+#: .\Health\settings.py:113
+msgid "Turkish"
+msgstr "Turkish"
+
+#: .\Health\settings.py:114
+msgid "Dutch"
+msgstr "Dutch"
+
+#: .\home\templates\home\index.html:29 .\home\templates\home\index.html:49
+msgid "Hizmetlerimiz"
+msgstr "Unsere Leistungen"
+
+#: .\home\templates\home\index.html:30
+msgid "Hakkımızda"
+msgstr "Über uns"
+
+#: .\home\templates\home\index.html:31 .\home\templates\home\index.html:103
+msgid "Doktorlarımız"
+msgstr "Unsere Ärzte"
+
+#: .\home\templates\home\index.html:32
+msgid "İletişim"
+msgstr "Kommunikation"
+
+#: .\home\templates\home\index.html:54
+msgid "Kanal Tedavisi"
+msgstr "Wurzelbehandlung"
+
+#: .\home\templates\home\index.html:55
+msgid ""
+"Kanal Tedavisi enfekte olmuş veya çürümüş dişleri onararak kurtarmak için "
+"kullanılan bir tedavi yöntemidir."
+msgstr "Die Wurzelkanalbehandlung ist eine Behandlungsmethode zur Reparatur und Erhaltung infizierter oder kariöser Zähne."
+
+#: .\home\templates\home\index.html:58
+msgid "Implant Tedavisi"
+msgstr "Implantatbehandlung"
+
+#: .\home\templates\home\index.html:59
+msgid ""
+"Implant eksik dişlerin yerine konması amacıyla, çene içerisine yerleştirilen "
+"çoğunlukla vida şeklindeki yapay bir diş köküdür"
+msgstr "Ein Implantat ist eine künstliche Zahnwurzel, meist schraubenförmig, die in den Kiefer eingesetzt wird, um fehlende Zähne zu ersetzen."
+
+#: .\home\templates\home\index.html:62
+msgid "Diş Beyazlatma"
+msgstr "Zahnaufhellung"
+
+#: .\home\templates\home\index.html:63
+msgid ""
+"Diş Beyazlatma dişlerin yüzeyindeki gözenekli mine yapısında oluşan renkli, "
+"organik ve inorganik maddelerin diş beyazlatma jelleri ile giderilmesi "
+"işlemidir"
+msgstr "Zahnaufhellung ist der Prozess der Entfernung von farbigen, organischen und anorganischen Substanzen, die sich in der porösen Schmelzstruktur auf der Oberfläche der Zähne mit Zahnaufhellungsgelen gebildet haben."
+
+#: .\home\templates\home\index.html:66
+msgid "Çok daha fazlası..."
+msgstr "Viel mehr..."
+
+#: .\home\templates\home\index.html:67
+msgid ""
+"Modelist Dent, diş estetiğindeki uzman deneyimi ve bir çok işlemi ile "
+"hizmetinizde"
+msgstr "Modelist Dent steht Ihnen mit seiner Expertenerfahrung in der Zahnästhetik und vielen Verfahren zur Verfügung."
+
+
+#: .\home\templates\home\index.html:78
+msgid "Biz Kimiz?"
+msgstr "Wer sind wir"
+
+#: .\home\templates\home\index.html:79
+msgid ""
+"Merhabalar; Kliniğimiz İstanbul-Pendik’te 2020 yılında açılmıştır. Uzman "
+"kadromuz ile sizlere en iyi hizmeti vermek için çalışıyoruz. Kliniğimizde; "
+"Kanal tedavisi, İmplant, Estetik Dolgular, Lamine, Zirconyum Kaplama, "
+"Porselen Kaplama, (Periodontoloji) Diş Eti Hastalıkları Tedavisi, Cerrahi "
+"Diş Çekimi, Diş Estetiği, diş tedavilerini başarılı bir şekilde "
+"gerçekleştiriyoruz. Kalitemizden ödün vermeden siz değerli hastalarımıza "
+"hizmet veriyoruz.Modelist hem yurtdışından hem yurtiçinden gelen hastaları "
+"için büyük kolaylıklar ve hizmetler sağlıyor."
+msgstr "Hallo; Unsere Klinik wurde 2020 in Istanbul-Pendik eröffnet. Wir arbeiten daran, Ihnen mit unserem Fachpersonal den besten Service zu bieten. In unserer Klinik; Wir führen erfolgreich Wurzelkanalbehandlungen, Implantate, ästhetische Füllungen, Laminate, Zirkoniumbeschichtungen, Porzellanbeschichtungen, (Parodontologie) Behandlung von Zahnfleischerkrankungen, chirurgische Zahnextraktion, Zahnästhetik, Zahnbehandlungen durch. Ohne unsere Qualität zu beeinträchtigen, dienen wir unseren geschätzten Patienten.Modelist bietet großen Komfort und Dienstleistungen für in- und ausländische Patienten."
+
+#: .\home\templates\home\index.html:85
+msgid "Galeri"
+msgstr "Galerie"
+
+#: .\home\templates\home\index.html:111 .\home\templates\home\index.html:117
+#: .\home\templates\home\index.html:123 .\home\templates\home\index.html:129
+msgid "Diş Hekimi"
+msgstr "Zahnarzt"
+
+#: .\home\templates\home\index.html:139
+msgid "İletişim Bilgileri"
+msgstr "Kontaktinformationen"
+
+#: .\home\templates\home\index.html:166
+msgid "Bilgi almak için tıklayın"
+msgstr "Zur Information"
+
+#: .\home\templates\home\index.html:167
+msgid "Randevu almak için tıklayın"
+msgstr "Für einen Termin"
+
+#: .\home\views.py:9
+msgid "Hello"
+msgstr "Sex"

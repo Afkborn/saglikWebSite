@@ -1,11 +1,12 @@
 {% load static %}
+{% load i18n %}
 <!DOCTYPE html>
-<html>
+<html lang="">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Home - Brand</title>
+    <title>Modelist Dent</title>
     <link rel="shortcut icon" type="image/png" href="{% static 'home/favicon.png' %}"/>
     <link rel="stylesheet" href="{% static 'home/bootstrap/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'home/fonts/font-awesome.min.css' %}">
@@ -18,19 +19,16 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script&amp;display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css">
-
-
 </head>
-
 <body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="54">
     <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav">
         <div class="container"><a class="navbar-brand" href="#page-top">Modelist Dent</a><button data-bs-toggle="collapse" data-bs-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto text-uppercase">
-                    <li class="nav-item"><a class="nav-link" href="#services">HİZMETLERİMİZ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">HAKKIMIZDA</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#team">DOKTORLARIMIZ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">İLETİŞİM</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">{% trans "Hizmetlerimiz" %}</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">{% trans "Hakkımızda" %}</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#team">{% trans "Doktorlarımız" %} </a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">{% trans "İletişim" %}</a></li>
                 </ul>
             </div>
         </div>
@@ -47,25 +45,25 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="text-uppercase section-heading"><span style="color: rgb(122, 122, 122);">HİZMETLERİMİZ</span></h2>
+                    <h2 class="text-uppercase section-heading"><span style="color: rgb(122, 122, 122);">{% trans "Hizmetlerimiz" %} </span></h2>
                 </div>
             </div>
             <div class="row gx-1 gy-2 text-center justify-content-center align-items-center">
                 <div class="col-md-4"><img src="{% static 'home/img/kanal-tedavisi.png' %}" style="width: 75px;margin-top: 20px;">
-                    <h4 class="section-heading"><strong><span style="color: rgb(122, 122, 122);">Kanal Tedavisi</span></strong><br></h4>
-                    <p class="text-muted"><span style="color: rgb(122, 122, 122);">Kanal Tedavisi enfekte olmuş veya çürümüş dişleri onararak kurtarmak için kullanılan bir tedavi yöntemidir.</span><br></p>
+                    <h4 class="section-heading"><strong><span style="color: rgb(122, 122, 122);">{% trans "Kanal Tedavisi" %} </span></strong><br></h4>
+                    <p class="text-muted"><span style="color: rgb(122, 122, 122);">{% trans "Kanal Tedavisi enfekte olmuş veya çürümüş dişleri onararak kurtarmak için kullanılan bir tedavi yöntemidir." %} </span><br></p>
                 </div>
                 <div class="col-md-4"><img src="{% static 'home/img/implant-png5eqa257am24ktisietgxws000vmm0wbnfa4qf8u.png' %}" style="width: 75px;margin-top: 20px;">
-                    <h4 class="section-heading"><strong><span style="color: rgb(122, 122, 122);">Implant Tedavisi</span></strong><br></h4>
-                    <p class="text-muted"><span style="color: rgb(122, 122, 122);">Implant eksik dişlerin yerine konması amacıyla, çene içerisine yerleştirilen çoğunlukla vida şeklindeki yapay bir diş köküdür</span><br></p>
+                    <h4 class="section-heading"><strong><span style="color: rgb(122, 122, 122);">{% trans "Implant Tedavisi" %} </span></strong><br></h4>
+                    <p class="text-muted"><span style="color: rgb(122, 122, 122);">{% trans "Implant eksik dişlerin yerine konması amacıyla, çene içerisine yerleştirilen çoğunlukla vida şeklindeki yapay bir diş köküdür" %} </span><br></p>
                 </div>
                 <div class="col-md-4"><img src="{% static 'home/img/teeth-whitening-png5s6cxwvpa5b1o03r9zksapfq1zqzsevmhfmso8e.png' %}" style="width: 75px;margin-top: 20px;">
-                    <h4 class="section-heading"><strong><span style="color: rgb(122, 122, 122);">Diş Beyazlatma</span></strong><br></h4>
-                    <p class="text-muted"><span style="color: rgb(122, 122, 122);">Diş Beyazlatma dişlerin yüzeyindeki gözenekli mine yapısında oluşan renkli, organik ve inorganik maddelerin diş beyazlatma jelleri ile giderilmesi işlemidir</span><br></p>
+                    <h4 class="section-heading"><strong><span style="color: rgb(122, 122, 122);">{% trans "Diş Beyazlatma" %} </span></strong><br></h4>
+                    <p class="text-muted"><span style="color: rgb(122, 122, 122);">{% trans "Diş Beyazlatma dişlerin yüzeyindeki gözenekli mine yapısında oluşan renkli, organik ve inorganik maddelerin diş beyazlatma jelleri ile giderilmesi işlemidir" %} </span><br></p>
                 </div>
                 <div class="col-md-4"><img src="{% static 'home/img/teeth-pnijwvgonabmtp3z3wbmmmkvies4jfjppwlbyfd0oe.png' %}" style="width: 75px;margin-top: 20px;">
-                    <h4 class="section-heading"><strong><span style="color: rgb(122, 122, 122);">Çok daha fazlası...</span></strong><br></h4>
-                    <p class="text-muted"><span style="color: rgb(122, 122, 122);">Modelist Dent, diş estetiğindeki uzman deneyimi ve bir çok işlemi ile hizmetinizde</span><br></p>
+                    <h4 class="section-heading"><strong><span style="color: rgb(122, 122, 122);">{% trans "Çok daha fazlası..." %} </span></strong><br></h4>
+                    <p class="text-muted"><span style="color: rgb(122, 122, 122);">{% trans "Modelist Dent, diş estetiğindeki uzman deneyimi ve bir çok işlemi ile hizmetinizde" %} </span><br></p>
                 </div>
             </div>
         </div>
@@ -76,14 +74,14 @@
                 <div class="container">
                     <div class="row mb-5">
                         <div class="col-auto col-md-8 col-xl-6 text-center mx-auto">
-                            <h2><span style="color: rgb(122, 122, 122);">BİZ KİMİZ?</span></h2>
-                            <p class="w-lg-50"><br><span style="color: rgb(34, 34, 34);">Merhabalar; Kliniğimiz İstanbul-Pendik’te 2020 yılında açılmıştır. Uzman kadromuz ile sizlere en iyi hizmeti vermek için çalışıyoruz. Kliniğimizde; Kanal tedavisi, İmplant, Estetik Dolgular, Lamine, Zirconyum Kaplama, Porselen Kaplama, (Periodontoloji) Diş Eti Hastalıkları Tedavisi, Cerrahi Diş Çekimi, Diş Estetiği, diş tedavilerini başarılı bir şekilde gerçekleştiriyoruz. Kalitemizden ödün vermeden siz değerli hastalarımıza hizmet veriyoruz.Modelist hem yurtdışından hem yurtiçinden gelen hastaları için büyük kolaylıklar ve hizmetler sağlıyor.</span><br><br></p>
+                            <h2><span style="color: rgb(122, 122, 122);">{% trans "Biz Kimiz?" %} </span></h2>
+                            <p class="w-lg-50"><br><span style="color: rgb(34, 34, 34);">{% trans "Merhabalar; Kliniğimiz İstanbul-Pendik’te 2020 yılında açılmıştır. Uzman kadromuz ile sizlere en iyi hizmeti vermek için çalışıyoruz. Kliniğimizde; Kanal tedavisi, İmplant, Estetik Dolgular, Lamine, Zirconyum Kaplama, Porselen Kaplama, (Periodontoloji) Diş Eti Hastalıkları Tedavisi, Cerrahi Diş Çekimi, Diş Estetiği, diş tedavilerini başarılı bir şekilde gerçekleştiriyoruz. Kalitemizden ödün vermeden siz değerli hastalarımıza hizmet veriyoruz.Modelist hem yurtdışından hem yurtiçinden gelen hastaları için büyük kolaylıklar ve hizmetler sağlıyor." %} </span><br><br></p>
                         </div>
                         <div class="col-auto align-self-start m-auto"><img class="img-fluid border-0" src="{% static 'home/img/Modelbina-plqzdsdvpnp2x8t30625x31hd9dmb3yaxibplq3h54.png' %}"></div>
                     </div>
                     <div class="row">
                         <div class="col-lg-12 text-center">
-                            <h2 class="text-uppercase section-heading"><span style="color: rgb(122, 122, 122);">GALERİ</span></h2>
+                            <h2 class="text-uppercase section-heading"><span style="color: rgb(122, 122, 122);">{% trans "Galeri" %} </span></h2>
                         </div>
                     </div>
                     <div class="row gx-2 gy-2 row-cols-1 row-cols-md-2 row-cols-xl-3 photos" data-bss-baguettebox="">
@@ -101,7 +99,7 @@
     <section class="bg-light" id="team">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2 class="text-uppercase section-heading"><span style="color: rgb(122, 122, 122);">DOKTORLARIMIZ</span></h2>
+                <h2 class="text-uppercase section-heading"><span style="color: rgb(122, 122, 122);">{% trans "Doktorlarımız" %} </span></h2>
             </div>
         </div>
         <div class="container">
@@ -109,25 +107,25 @@
                 <div class="col-sm-4">
                     <div class="team-member"><img class="rounded-circle mx-auto" src="{% static 'home/img/doctor/ahmet_karaman.jpg' %}">
                         <h4>Ahmet Karaman<br></h4>
-                        <p class="text-muted">Diş Hekimi<br></p>
+                        <p class="text-muted">{% trans "Diş Hekimi" %} <br></p>
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="team-member"><img class="rounded-circle mx-auto" src="{% static 'home/img/doctor/busra_abay.jpg' %}">
                         <h4>Büşra Abay</h4>
-                        <p class="text-muted">Diş Hekimi<br></p>
+                        <p class="text-muted">{% trans "Diş Hekimi" %} <br></p>
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="team-member"><img class="rounded-circle mx-auto" src="{% static 'home/img/doctor/busra_ozgunesli.jpg' %}">
                         <h4>Büşra Özgüneşli<br></h4>
-                        <p class="text-muted">Diş Hekimi<br></p>
+                        <p class="text-muted">{% trans "Diş Hekimi" %} <br></p>
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="team-member"><img class="rounded-circle mx-auto" src="{% static 'home/img/doctor/samet_isik.jpg' %}">
                         <h4>Samet IŞIK</h4>
-                        <p class="text-muted">Diş Hekimi</p>
+                        <p class="text-muted">{% trans "Diş Hekimi" %} </p>
                     </div>
                 </div>
             </div>
@@ -137,7 +135,7 @@
         <div class="container" style="color: rgb(255,255,255);">
             <div class="row gx-0 justify-content-center align-items-center">
                 <div class="col-lg-12 text-center">
-                    <h2 class="text-uppercase section-heading" style="font-weight: bold;">İletİşİm Bİlgİlerİ</h2>
+                    <h2 class="text-uppercase section-heading" style="font-weight: bold;">{% trans "İletişim Bilgileri" %} </h2>
                 </div>
             </div>
             <div class="row gx-1 justify-content-center align-items-center">
@@ -164,8 +162,8 @@
                                 </div>
                             </div>
                             <div class="col" style="margin-top: 10px;"><i class="fas fa-mail-bulk" style="width: 100%;text-align: center;font-size: 33px;height: 32px;"></i>
-                                <p></p><a class="socialMedia" href="mailto:info@modelistdent.com">Bilgi almak için tıklayın&nbsp;</a>
-                                <p></p><a class="socialMedia" href="mailto:randevu@modelistdent.com">Randevu almak için tıklayın</a>
+                                <p></p><a class="socialMedia" href="mailto:info@modelistdent.com">{% trans "Bilgi almak için tıklayın" %} &nbsp;</a>
+                                <p></p><a class="socialMedia" href="mailto:randevu@modelistdent.com">{% trans "Randevu almak için tıklayın" %} </a>
                             </div>
                         </div>
                     </div>
