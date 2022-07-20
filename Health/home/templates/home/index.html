@@ -107,7 +107,7 @@
                 
                 {% for person in person_list %}
                 <div class="col-sm-4">
-                    <a class="person" href="{{person.id}}">
+                    <a class="person portfolio-link" href="#model{{person.id}}" data-bs-toggle="modal">
                         <div class="team-member">
                             <img class="rounded-circle mx-auto" src="media/{{person.photo}}">
                             <h4>{{person.first_name}} {{person.last_name}}<br></h4>
@@ -173,6 +173,75 @@
             </div>
         </div>
     </footer>
+
+    {% for person in person_list %}
+    <div id="model{{person.id}}" class="modal fade text-center portfolio-modal" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <div class="modal-body">
+                                <h2 class="text-uppercase">{{person.first_name}} {{person.last_name}}</h2>
+                                <p class="text-muted item-intro">{{person.position}}</p>
+                                <img class="img-fluid d-block mx-auto" src="media/{{person.photo}}" />
+
+                                {% if person.education_set.all %}
+                                <h4>
+                                    <span style="color: rgb(122, 122, 122);">{% trans "Eğitim" %} </span>
+                                </h4>
+                                {% for egitim in person.education_set.all %}
+                                    {{ egitim }} <br>
+                                {% endfor %}
+                                <p></p>
+                                {% endif %}
+
+                                {% if person.jobexperience_set.all %}
+                                <h4>
+                                    <span style="color: rgb(122, 122, 122);">{% trans "İş Tecrübesi" %} </span> 
+                                </h4>
+                                {% for job in person.jobexperience_set.all %}
+                                {{ job }} <br>
+                                {% endfor %}
+                                <p></p>
+                                {% endif %}
+
+                                {% if person.clinicalapplications_set.all %}
+                                <h4>
+                                    <span style="color: rgb(122, 122, 122);">{% trans "Klinik Uygulamalar" %} </span> 
+                                </h4>
+                                {% for clinical_app in person.clinicalapplications_set.all %}
+                                {{ clinical_app }} <br>
+                                {% endfor %}
+                                <p></p>
+                                {% endif %}
+
+                                {% if person.certificate_set.all %}
+                                <h4>
+                                    <span style="color: rgb(122, 122, 122);">{% trans "Sertifikalar" %} </span> 
+                                </h4>
+
+                                {% for certificate in person.certificate_set.all %}
+                                {{ certificate }} <br>
+                                {% endfor %}
+                                <p></p>
+                                {% endif %}
+
+
+                                <button class="btn btn-primary" type="button" data-bs-dismiss="modal">
+                                    <i class="fa fa-times"></i>
+                                    <span>{% trans "Kapat" %}</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+
     <script src="{% static 'home/bootstrap/js/bootstrap.min.js' %}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js"></script>
     <script src="{% static 'home/js/agency.js' %} "></script>
