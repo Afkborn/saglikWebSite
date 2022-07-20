@@ -104,30 +104,19 @@
         </div>
         <div class="container">
             <div class="row justify-content-center align-items-center">
+                
+                {% for person in person_list %}
                 <div class="col-sm-4">
-                    <div class="team-member"><img class="rounded-circle mx-auto" src="{% static 'home/img/doctor/ahmet_karaman.jpg' %}">
-                        <h4>Ahmet Karaman<br></h4>
-                        <p class="text-muted">{% trans "Diş Hekimi" %} <br></p>
-                    </div>
+                    <a class="person" href="{{person.id}}">
+                        <div class="team-member">
+                            <img class="rounded-circle mx-auto" src="media/{{person.photo}}">
+                            <h4>{{person.first_name}} {{person.last_name}}<br></h4>
+                            <p class="text-muted">{{person.position}}<br></p>
+                        </div>
+                    </a>
                 </div>
-                <div class="col-sm-4">
-                    <div class="team-member"><img class="rounded-circle mx-auto" src="{% static 'home/img/doctor/busra_abay.jpg' %}">
-                        <h4>Büşra Abay</h4>
-                        <p class="text-muted">{% trans "Diş Hekimi" %} <br></p>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="team-member"><img class="rounded-circle mx-auto" src="{% static 'home/img/doctor/busra_ozgunesli.jpg' %}">
-                        <h4>Büşra Özgüneşli<br></h4>
-                        <p class="text-muted">{% trans "Diş Hekimi" %} <br></p>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="team-member"><img class="rounded-circle mx-auto" src="{% static 'home/img/doctor/samet_isik.jpg' %}">
-                        <h4>Samet IŞIK</h4>
-                        <p class="text-muted">{% trans "Diş Hekimi" %} </p>
-                    </div>
-                </div>
+                {% endfor %}
+
             </div>
         </div>
     </section>
