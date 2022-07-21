@@ -71,16 +71,19 @@
             <div class="row gx-1 gy-2 text-center justify-content-center align-items-center">
 
                 {% for service in service_list %}
-                    <div class="col-md-4"><img src="media/{{service.photo}}" style="width: 75px;margin-top: 20px;">
-                        <h4 class="section-heading"><strong><span style="color: rgb(122, 122, 122);">{{service.name}}</span></strong><br></h4>
-                        <p class="text-muted"><span style="color: rgb(122, 122, 122);">{{service.brief}}</span><br></p>
+                    <div class="col-md-4">
+                        <a class="objectLink" href="{% url 'home:services' service.id %}">
+                            <img src="media/{{service.photo}}" style="width: 75px;margin-top: 20px;">
+                            <h4 class="section-heading"><strong><span style="color: rgb(122, 122, 122);">{{service.name}}</span></strong><br></h4>
+                            <p class="text-muted"><span style="color: rgb(122, 122, 122);">{{service.brief}}</span><br></p>
+                        </a>
                     </div>
                 {% endfor %}
 
                 <div class="col-md-4"><img src="{% static 'home/img/teeth-pnijwvgonabmtp3z3wbmmmkvies4jfjppwlbyfd0oe.png' %}" style="width: 75px;margin-top: 20px;">
                     <h4 class="section-heading"><strong><span style="color: rgb(122, 122, 122);">{% trans "Çok daha fazlası..." %} </span></strong><br></h4>
                     <p class="text-muted"><span style="color: rgb(122, 122, 122);">{% trans "Modelist Dent, diş estetiğindeki uzman deneyimi ve bir çok işlemi ile hizmetinizde" %} </span><br></p>
-                    <button class="btn btn-primary" type="button" data-bs-dismiss="modal">
+                    <button onclick="location.href='services/0'" class="btn btn-primary" type="button" data-bs-dismiss="modal">
                         <span>{% trans "Diğer Hizmetlerimiz için tıklayın" %}</span>
                     </button>
                 </div>
@@ -129,7 +132,7 @@
                 
                 {% for person in person_list %}
                 <div class="col-sm-4">
-                    <a class="person portfolio-link" href="#modelPerson{{person.id}}" data-bs-toggle="modal">
+                    <a class="objectLink" href="#modelPerson{{person.id}}" data-bs-toggle="modal">
                         <div class="team-member">
                             <img class="rounded-circle mx-auto" src="media/{{person.photo}}">
                             <h4> 

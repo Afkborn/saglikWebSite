@@ -18,7 +18,7 @@
 }
 
 
-.person{
+.objectLink{
   font-family: inherit;
   font-weight: 500;
   line-height: 1.1;
@@ -26,6 +26,6 @@
   text-decoration: none;
 }
 
-.person:link, .person:visited, .person:hover{
+.objectLink:link, .objectLink:visited, .objectLink:hover{
   text-decoration: none;
 }

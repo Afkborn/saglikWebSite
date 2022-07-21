@@ -4,8 +4,10 @@ from django.conf import settings
 from django.conf.urls.static import static
 from . import views
 
+app_name = 'home'
 urlpatterns = [
     path('', views.index, name='index'),
+    path('services/<int:service_id>/', views.services, name='services'),
 ]
 
 if settings.DEBUG:

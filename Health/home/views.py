@@ -22,3 +22,11 @@ def index(request):
     return HttpResponse(template.render(context, request))
 
 
+def services(request, service_id):
+    if (service_id == 0):
+        response = "BASIC SERVICE"
+        return HttpResponse(response)
+    else:    
+        service = Service.objects.get(pk=service_id)
+        response = f" {service}."
+        return HttpResponse(response)

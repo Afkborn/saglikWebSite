@@ -20,11 +20,11 @@ def get_default_lang():
 
 
 class Person(models.Model):
-    first_name = models.CharField(max_length=30)
-    last_name = models.CharField(max_length=30)
-    position = models.CharField(max_length=30)
+    first_name = models.CharField(max_length=30, help_text="İsim")
+    last_name = models.CharField(max_length=30, help_text="Soyisim")
+    position = models.CharField(max_length=30,help_text="Pozisyon")
     photo = models.ImageField(upload_to="person_image", default= "person_image/default.png")
-    lang = models.ForeignKey(Language,on_delete=models.DO_NOTHING, default=1)
+    lang = models.ForeignKey(Language,on_delete=models.DO_NOTHING, default=1,help_text="Hangi dile sahip üyelerde gözükeceğini belirler")
     def __str__(self):
         return f"{self.first_name} {self.last_name} [{self.lang}]"    
 
@@ -32,20 +32,20 @@ class Person(models.Model):
 
 class Education(models.Model):
     person = models.ForeignKey(Person,on_delete=models.CASCADE)
-    start_date = models.IntegerField(default=0)
-    finish_date = models.IntegerField(default=0)
-    school_name = models.CharField(max_length=50)
-    school_department_name = models.CharField(max_length=50)
+    start_date = models.IntegerField(default=0,help_text="Başlangıç tarihi")
+    finish_date = models.IntegerField(default=0,help_text="Bitiş tarihi")
+    school_name = models.CharField(max_length=50, help_text="Okul Adı")
+    school_department_name = models.CharField(max_length=50,help_text="Bölüm Adı")
     def __str__(self):
         return f"{self.school_name} {self.school_department_name} ({self.start_date}-{self.finish_date})"
 
 
 class JobExperience(models.Model):
     person = models.ForeignKey(Person,on_delete=models.CASCADE)
-    start_date = models.IntegerField(default=0)
-    finish_date = models.IntegerField(default=0)
-    business_name = models.CharField(max_length=50)
-    position = models.CharField(max_length=30)
+    start_date = models.IntegerField(default=0,help_text="Başlangıç tarihi")
+    finish_date = models.IntegerField(default=0,help_text="Bitiş tarihi")
+    business_name = models.CharField(max_length=50,help_text="İş yerinin adı")
+    position = models.CharField(max_length=30,help_text="Pozisyon")
     def __str__(self):
         returnText = ""
         if (self.business_name != None):
@@ -64,15 +64,15 @@ class JobExperience(models.Model):
 
 class ClinicalApplications(models.Model):
     person = models.ForeignKey(Person,on_delete=models.CASCADE)
-    name = models.CharField(max_length=80)
+    name = models.CharField(max_length=80,help_text="Uygulama adı")
     def __str__(self):
         return f"{self.name}"
 
 class Certificate(models.Model):
     person = models.ForeignKey(Person,on_delete=models.CASCADE)
-    name = models.CharField(max_length=80)
-    certificate_year = models.IntegerField(default=0)
-    educator_name = models.CharField(max_length=80, default="", null=True, blank=True)
+    name = models.CharField(max_length=80,help_text="Sertifikat adı")
+    certificate_year = models.IntegerField(default=0,help_text="Veriliş tarihi")
+    educator_name = models.CharField(max_length=80, default="", null=True, blank=True, help_text="Eğitmen adı/yeri")
     def __str__(self):
         returnText = ""
         if (self.name != None):
@@ -87,11 +87,12 @@ class Certificate(models.Model):
     
     
 class Service(models.Model):
-    name = models.CharField(max_length=250)
-    brief = models.CharField(max_length=500)
-    instruction = models.CharField(max_length=5000)
-    show_home_screen = models.BooleanField(default=False)
+    name = models.CharField(max_length=250,help_text="Servis adı")
+    brief = models.CharField(max_length=500,help_text="Kısa özet")
+    instruction = models.CharField(max_length=5000,help_text="Detaylı açıklama")
+    show_home_screen = models.BooleanField(default=False,help_text="Ana ekranda gözüksün mü?")
     photo = models.ImageField(upload_to="service_image", default= "service_image/default.png")
-    lang = models.ForeignKey(Language, on_delete=models.DO_NOTHING,default=1)
+    lang = models.ForeignKey(Language, on_delete=models.DO_NOTHING,default=1,help_text="Hangi dile sahip üyelerde gözükeceğini belirler")
     def __str__(self):
         return f"{self.name} [{self.lang}]"
+
