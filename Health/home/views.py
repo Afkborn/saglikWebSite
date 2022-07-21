@@ -7,14 +7,18 @@ from django.template import loader
 from .models import *
 
 def index(request):
-    person_list = Person.objects.order_by('first_name')
+    web_lang = Language.objects.filter(abbreviated_name=request.LANGUAGE_CODE)[0]
+    
+    person_list = Person.objects.filter(lang=web_lang.id).order_by('first_name')
+    service_list = Service.objects.filter(show_home_screen=True).filter(lang=web_lang.id)
+    
     template = loader.get_template('home/index.html')
+    
     context = {
-        "person_list" : person_list
+        "person_list" : person_list,
+        "service_list" : service_list,
     }
     
     return HttpResponse(template.render(context, request))
 
 
-def detail(request, question_id):
-    return HttpResponse("You're looking at question %s." % question_id)
