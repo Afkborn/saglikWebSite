@@ -1,0 +1,9 @@
+
+# DATABASE
+db.sqlite3
+
+# MEDIA 
+media/
+
+# KEY
+SECRETS.py
