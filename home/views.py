@@ -7,8 +7,12 @@ from django.template import loader
 from .models import *
 
 def index(request):
-    web_lang = Language.objects.filter(abbreviated_name=request.LANGUAGE_CODE)[0]
-    
+    try:
+        web_lang = Language.objects.filter(abbreviated_name=request.LANGUAGE_CODE)[0]
+    except:
+        get_default_lang()
+        web_lang = Language.objects.filter(abbreviated_name=request.LANGUAGE_CODE)[0]
+
     person_list = Person.objects.filter(lang=web_lang.id).order_by('first_name')
     service_list = Service.objects.filter(show_home_screen=True).filter(lang=web_lang.id)
     
