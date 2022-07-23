@@ -5,16 +5,12 @@ from .models import  *
 
 class EducationInline(admin.TabularInline):
     model = Education
-
 class ClinicalApplicationsInline(admin.TabularInline):
     model = ClinicalApplications
-
 class CertificateInline(admin.TabularInline):
     model = Certificate
-
 class JobExperienceInline(admin.TabularInline):
     model = JobExperience
-
 class PersonAdmin(admin.ModelAdmin):
     inlines = [
         EducationInline,
@@ -22,17 +18,30 @@ class PersonAdmin(admin.ModelAdmin):
         CertificateInline,
         JobExperienceInline
     ]
-
-
+    list_display = ('first_name', 'last_name','position', 'lang')
+    list_filter = ("lang",)
+    search_fields = ['first_name', 'last_name']
 #PERSON EDUCATIN, CLINICALAPPLICATIONS, CERTIFICATE, JOBEXPERIENCE
 admin.site.register(Person,PersonAdmin)
-# admin.site.register(Education)
-# admin.site.register(ClinicalApplications)
-# admin.site.register(Certificate)
-# admin.site.register(JobExperience)
+
 
 #SERVICE
-admin.site.register(Service)
+class ServiceAdmin(admin.ModelAdmin):
+    list_display = ('name', 'brief','lang')
+    list_filter = ("lang",)
+    search_fields = ['name']
+admin.site.register(Service, ServiceAdmin)
 
 #LANG
-admin.site.register(Language)
+class LanguageAdmin(admin.ModelAdmin):
+    list_display = ('name', 'abbreviated_name')
+    search_fields = ['name']
+admin.site.register(Language,LanguageAdmin)
+
+#COMMENT
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ('author_first_name', 'author_last_name','lang', 'score')
+    list_filter = ("lang",)
+    search_fields = ['author_first_name','author_last_name']
+    
+admin.site.register(Comment)

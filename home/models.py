@@ -1,12 +1,13 @@
-from email.policy import default
-from unicodedata import name
+
+from django.core.validators import MaxValueValidator, MinValueValidator
+
 from django.db import models
 
 # Create your models here.
 
 class Language(models.Model):
-    name = models.CharField(max_length=50)
-    abbreviated_name = models.CharField(max_length=8)
+    name = models.CharField(max_length=50, blank=True)
+    abbreviated_name = models.CharField(max_length=8, blank=True)
     def __str__(self) -> str:
         return f"{str(self.abbreviated_name).upper()}"
     
@@ -89,10 +90,28 @@ class Certificate(models.Model):
 class Service(models.Model):
     name = models.CharField(max_length=250,help_text="Servis adı")
     brief = models.CharField(max_length=500,help_text="Kısa özet")
-    instruction = models.CharField(max_length=5000,help_text="Detaylı açıklama")
+    instruction = models.TextField()
+    
+    instruction_photo_1 = models.ImageField(upload_to="service_image",default= "service_image/default.png")
+    instruction_photo_1_visible = models.BooleanField(default=False,help_text="Fotoğraf 1 gözüksün mü?")
+    
+    instruction_photo_2 = models.ImageField(upload_to="service_image",default= "service_image/default.png")
+    instruction_photo_2_visible = models.BooleanField(default=False,help_text="Fotoğraf 2 gözüksün mü?")
+    
+    instruction_photo_3 = models.ImageField(upload_to="service_image",default= "service_image/default.png")
+    instruction_photo_3_visible = models.BooleanField(default=False,help_text="Fotoğraf 3 gözüksün mü?")
+    
     show_home_screen = models.BooleanField(default=False,help_text="Ana ekranda gözüksün mü?")
     photo = models.ImageField(upload_to="service_image", default= "service_image/default.png")
     lang = models.ForeignKey(Language, on_delete=models.DO_NOTHING,default=1,help_text="Hangi dile sahip üyelerde gözükeceğini belirler")
     def __str__(self):
         return f"{self.name} [{self.lang}]"
 
+
+class Comment(models.Model):
+    author_first_name = models.CharField(max_length=30, help_text="İsim")
+    author_last_name = models.CharField(max_length=30, help_text="Soyisim")
+    comment_date = models.DateField(help_text="Tarih")
+    photo = models.ImageField(upload_to="person_image", default= "person_image/default.png")
+    score = models.PositiveSmallIntegerField(help_text="Puan", validators=[MinValueValidator(1),MaxValueValidator(100)], default=0)
+    comment = models.CharField(max_length=500,help_text="Yorum")
