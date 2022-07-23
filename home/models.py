@@ -2,7 +2,7 @@
 from django.core.validators import MaxValueValidator, MinValueValidator
 
 from django.db import models
-
+from ckeditor.fields import RichTextField
 # Create your models here.
 
 class Language(models.Model):
@@ -90,20 +90,10 @@ class Certificate(models.Model):
 class Service(models.Model):
     name = models.CharField(max_length=250,help_text="Servis adı")
     brief = models.CharField(max_length=500,help_text="Kısa özet")
-    instruction = models.TextField()
-    
-    instruction_photo_1 = models.ImageField(upload_to="service_image",default= "service_image/default.png")
-    instruction_photo_1_visible = models.BooleanField(default=False,help_text="Fotoğraf 1 gözüksün mü?")
-    
-    instruction_photo_2 = models.ImageField(upload_to="service_image",default= "service_image/default.png")
-    instruction_photo_2_visible = models.BooleanField(default=False,help_text="Fotoğraf 2 gözüksün mü?")
-    
-    instruction_photo_3 = models.ImageField(upload_to="service_image",default= "service_image/default.png")
-    instruction_photo_3_visible = models.BooleanField(default=False,help_text="Fotoğraf 3 gözüksün mü?")
-    
     show_home_screen = models.BooleanField(default=False,help_text="Ana ekranda gözüksün mü?")
     photo = models.ImageField(upload_to="service_image", default= "service_image/default.png")
     lang = models.ForeignKey(Language, on_delete=models.DO_NOTHING,default=1,help_text="Hangi dile sahip üyelerde gözükeceğini belirler")
+    instruction = RichTextField()
     def __str__(self):
         return f"{self.name} [{self.lang}]"
 

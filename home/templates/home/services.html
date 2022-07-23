@@ -49,7 +49,7 @@
             
             <div class="main">
                 {% if service %}
-                    <p>{{service.instruction}}</p>
+                    <div>{{ service.instruction|safe }}</div>
                 {% else %}
                     <p>BASIC </p>
                 {% endif %}
