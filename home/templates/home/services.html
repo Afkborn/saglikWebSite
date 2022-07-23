@@ -1,0 +1,77 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Modelist Dent</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'home/favicon.png' %}"/>
+    <link rel="stylesheet" href="{% static 'home/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'home/fonts/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'home/fonts/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'home/fonts/fontawesome5-overrides.min.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/Contact-form-simple.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/Contact-white--Gmap-Contact.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/Contact-white--Gmap-styles.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/Contact-white--Gmap.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script&amp;display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css">
+</head>
+
+<body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="54">
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav">
+        <div class="container"><a class="navbar-brand" href="/">ModelistDent</a>
+            <button data-bs-toggle="collapse" data-bs-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto text-uppercase">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Ana Sayfa</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section>
+        <div class="container">
+            
+            <div class="left">
+                {% for service in service_list %}
+                <a class="objectLink" href="{% url 'home:services' service.id %}">
+                    <div style="color: rgb(122,122,122);margin-top: 20px;">
+                        <h4 class="fw-bold" style="text-align: left;font-size: 22px;">{{service.name}}</h4>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+            
+            <div class="main">
+                {% if service %}
+                    <p>{{service.instruction}}</p>
+                {% else %}
+                    <p>BASIC </p>
+                {% endif %}
+                
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4"><span class="copyright"></span></div>
+                <div class="col-md-4"><span class="copyright">Copyright&nbsp;©&nbsp; 2022</span></div>
+                <div class="col-md-4"><span class="copyright"></span></div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'home/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'home/js/agency.js' %} "></script>
+    <script src="{% static 'home/js/Lightbox-Gallery.js' %}"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js"></script>
+</body>
+
+</html>

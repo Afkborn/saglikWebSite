@@ -29,3 +29,35 @@
 .objectLink:link, .objectLink:visited, .objectLink:hover{
   text-decoration: none;
 }
+
+
+menu {
+  display: flex;
+  padding-left: 0;
+  flex-direction: column;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  margin-bottom: 0;
+  z-index: 2;
+  /*padding-right: 0;*/
+}
+
+.left {
+  background-color: var(--bs-primary);
+  padding: 20px;
+  float: left;
+  width: 20%;
+}
+
+.main {
+  background-color: #f1f1f1;
+  padding: 20px;
+  float: left;
+  width: 80%;
+}
+
+@media screen and (max-width: 800px) {
+  .left, .main {
+    width: 100%;
+  }
+}

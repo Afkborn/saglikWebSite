@@ -80,11 +80,19 @@
                     </div>
                 {% endfor %}
 
-                <div class="col-md-4"><img src="{% static 'home/img/teeth-pnijwvgonabmtp3z3wbmmmkvies4jfjppwlbyfd0oe.png' %}" style="width: 75px;margin-top: 20px;">
-                    <h4 class="section-heading"><strong><span style="color: rgb(122, 122, 122);">{% trans "Çok daha fazlası..." %} </span></strong><br></h4>
-                    <p class="text-muted"><span style="color: rgb(122, 122, 122);">{% trans "Modelist Dent, diş estetiğindeki uzman deneyimi ve bir çok işlemi ile hizmetinizde" %} </span><br></p>
-                    <button onclick="location.href='services/0'" class="btn btn-primary" type="button" data-bs-dismiss="modal">
-                        <span>{% trans "Diğer Hizmetlerimiz için tıklayın" %}</span>
+                <div class="col-md-4">
+                    <img src="{% static 'home/img/teeth-pnijwvgonabmtp3z3wbmmmkvies4jfjppwlbyfd0oe.png' %}" style="width: 75px;margin-top: 20px;">
+                    <h4 class="section-heading">
+                        <strong>
+                            <span style="color: rgb(122, 122, 122);">{% trans "Çok daha fazlası..." %} </span>
+                        </strong>
+                        <br>
+                    </h4>
+                    <p class="text-muted">
+                        <span style="color: rgb(122, 122, 122);">{% trans "Modelist Dent, diş estetiğindeki uzman deneyimi ve bir çok işlemi ile hizmetinizde." %} </span>
+                    </p>
+                    <button onclick="location.href='services/'" class="btn btn-primary" type="button" data-bs-dismiss="modal">
+                        <span>{% trans "Bütün hizmetlerimiz için tıklayın" %}</span>
                     </button>
                 </div>
 
