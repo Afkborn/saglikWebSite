@@ -16,7 +16,7 @@ def index(request):
     home_screen_slide_list = HomeScreenSlide.objects.filter(lang=web_lang.id)
     person_list = Person.objects.filter(lang=web_lang.id).order_by('first_name')
     service_list = Service.objects.filter(show_home_screen=True).filter(lang=web_lang.id)
-    comment_list = Comment.objects.all
+    comment_list = Comment.objects.filter(show_home_page=True).order_by('comment_date')
     if (service_list.count() > 6):
         service_list = service_list.order_by('?')
         service_list = service_list[:6]

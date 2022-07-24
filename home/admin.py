@@ -41,7 +41,7 @@ admin.site.register(Language,LanguageAdmin)
 #COMMENT
 class CommentAdmin(admin.ModelAdmin):
     list_display = ('author_first_name', 'author_last_name', 'score')
-    # list_filter = ()
+    list_filter = ('show_home_page','is_google_comment')
     search_fields = ['author_first_name','author_last_name']
     
 admin.site.register(Comment,CommentAdmin)

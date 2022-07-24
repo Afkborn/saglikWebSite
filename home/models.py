@@ -103,10 +103,12 @@ class Comment(models.Model):
     author_first_name = models.CharField(max_length=30, help_text="İsim")
     author_last_name = models.CharField(max_length=30, help_text="Soyisim")
     comment_date = models.DateField(help_text="Tarih")
+    is_google_comment = models.BooleanField(default=False,help_text="Google'dan gelen mesaj mi?")
+    show_home_page = models.BooleanField(default=True, help_text="Ana sayfa da gösterilsin mi?")
     photo = models.ImageField(upload_to="person_image", default= "person_image/default.png")
     score = models.PositiveSmallIntegerField(help_text="Puan", validators=[MinValueValidator(0),MaxValueValidator(5)], default=0)
     comment = models.CharField(max_length=500,help_text="Yorum")
-    
+
     def __str__(self):
         return f"{self.author_first_name} {self.author_last_name}"
     
