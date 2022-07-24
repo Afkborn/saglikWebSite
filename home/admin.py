@@ -28,7 +28,7 @@ admin.site.register(Person,PersonAdmin)
 #SERVICE
 class ServiceAdmin(admin.ModelAdmin):
     list_display = ('name', 'brief','lang')
-    list_filter = ("lang",)
+    list_filter = ("lang","show_home_screen")
     search_fields = ['name']
 admin.site.register(Service, ServiceAdmin)
 
@@ -40,8 +40,18 @@ admin.site.register(Language,LanguageAdmin)
 
 #COMMENT
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ('author_first_name', 'author_last_name','lang', 'score')
-    list_filter = ("lang",)
+    list_display = ('author_first_name', 'author_last_name', 'score')
+    # list_filter = ()
     search_fields = ['author_first_name','author_last_name']
     
-admin.site.register(Comment)
+admin.site.register(Comment,CommentAdmin)
+
+
+
+#HomeScreenSlide
+class HomeScreenSlideAdmin(admin.ModelAdmin):
+    list_display = ('slide_name','lang')
+    list_filter = ("lang",)
+    search_fields = ['slide_name']
+    
+admin.site.register(HomeScreenSlide,HomeScreenSlideAdmin)

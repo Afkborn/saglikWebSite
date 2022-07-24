@@ -105,3 +105,14 @@ class Comment(models.Model):
     photo = models.ImageField(upload_to="person_image", default= "person_image/default.png")
     score = models.PositiveSmallIntegerField(help_text="Puan", validators=[MinValueValidator(1),MaxValueValidator(100)], default=0)
     comment = models.CharField(max_length=500,help_text="Yorum")
+    def __str__(self):
+        return f"{self.author_first_name} {self.author_last_name}"
+    
+class HomeScreenSlide(models.Model):
+    slide_name = models.CharField(max_length=250,help_text="")
+    href = models.CharField(max_length=250,help_text="Tıklanıldığında açılacak site konumu", blank=True)
+    photo = models.ImageField(upload_to="home_slide_image", default= "home_slide_image/default.png")
+    lang = models.ForeignKey(Language, on_delete=models.DO_NOTHING,default=1,help_text="Hangi dile sahip üyelerde gözükeceğini belirler")
+    slide_desc = RichTextField(blank=True)
+    def __str__(self):
+        return f"{self.slide_name} [{self.lang}]"

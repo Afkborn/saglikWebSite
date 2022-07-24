@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+#Bilgehan Kalay start_date 17/07/2022
+
 """Django's command-line utility for administrative tasks."""
 import os
 import sys

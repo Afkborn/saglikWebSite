@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Modelist Dent</title>
+    <title>{{service.name}} - Modelist Dent</title>
     <link rel="shortcut icon" type="image/png" href="{% static 'home/favicon.png' %}"/>
     <link rel="stylesheet" href="{% static 'home/bootstrap/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'home/fonts/font-awesome.min.css' %}">
@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{% static 'home/css/Contact-white--Gmap-Contact.css' %}">
     <link rel="stylesheet" href="{% static 'home/css/Contact-white--Gmap-styles.css' %}">
     <link rel="stylesheet" href="{% static 'home/css/Contact-white--Gmap.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/Simple-Slider-Simple-Slider.css' %}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script&amp;display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css">
@@ -37,10 +38,10 @@
     <section>
         <div class="container">
             
-            <div class="left">
+            <div class="left bg-light">
                 {% for service in service_list %}
                 <a class="objectLink" href="{% url 'home:services' service.id %}">
-                    <div style="color: rgb(122,122,122);margin-top: 20px;">
+                    <div style="margin-top: 20px;">
                         <h4 class="fw-bold" style="text-align: left;font-size: 22px;">{{service.name}}</h4>
                     </div>
                 </a>
@@ -51,7 +52,9 @@
                 {% if service %}
                     <div>{{ service.instruction|safe }}</div>
                 {% else %}
-                    <p>BASIC </p>
+                    <h4 style="margin-top: 50px; margin-bottom: 50px;">
+                        {% trans "Hizmetler hakkında detaylı bilgi almak için yan menüden detaylı bilgisini almak istediğiniz hizmete tıklayın." %}
+                    </h4>
                 {% endif %}
                 
             </div>
@@ -70,7 +73,9 @@
     <script src="{% static 'home/bootstrap/js/bootstrap.min.js' %}"></script>
     <script src="{% static 'home/js/agency.js' %} "></script>
     <script src="{% static 'home/js/Lightbox-Gallery.js' %}"></script>
+    <script src="{% static 'home/js/Simple-Slider.js' %}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.js"></script>
 </body>
 
 </html>
