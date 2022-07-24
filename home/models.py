@@ -89,7 +89,7 @@ class Certificate(models.Model):
     
 class Service(models.Model):
     name = models.CharField(max_length=250,help_text="Servis adı")
-    brief = models.CharField(max_length=500,help_text="Kısa özet")
+    brief = models.TextField()  #models.CharField(max_length=500,help_text="Kısa özet")
     show_home_screen = models.BooleanField(default=False,help_text="Ana ekranda gözüksün mü?")
     photo = models.ImageField(upload_to="service_image", default= "service_image/default.png")
     lang = models.ForeignKey(Language, on_delete=models.DO_NOTHING,default=1,help_text="Hangi dile sahip üyelerde gözükeceğini belirler")

@@ -41,9 +41,6 @@
                         <a class="nav-link" href="#team">{% trans "Doktorlarımız" %} </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#hotel">{% trans "Konaklama" %}</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="#comment">{% trans "Yorumlar" %}</a>
                     </li>
                     <li class="nav-item">
@@ -60,23 +57,10 @@
         </div>
     </nav>
     <header class="masthead" >
-        <div class="simple-slider" style="height: 100%;width: 100%;">
-            <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    {% if home_screen_slide_list %}
-                        {% for home_screen_slide in home_screen_slide_list %}
-                            <div class="swiper-slide" style="background: url('../static/home/img/fddff-min.jpg') center center / cover no-repeat;"></div>
-                        {% endfor %}
-                    {% endif %}
-                </div>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-            </div>
-        </div>
+        <!-- SLIDER YAPILACAK -->
     </header>
 
-    <section id="services">
+    <section class="bg-light" id="services">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -120,6 +104,9 @@
         </div>
     </section>
     <section id="about">
+        <div class="col-lg-12 text-center">
+            <h2 class=" section-heading"><span style="color: rgb(122, 122, 122);">{% trans "Hakkımızda" %} </span></h2>
+        </div>
         <div class="container">
             <section class="photo-gallery py-4 py-xl-5">
                 <div class="container">
@@ -150,7 +137,7 @@
     <section class="bg-light" id="team">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2 class="text-uppercase section-heading"><span style="color: rgb(122, 122, 122);">{% trans "Doktorlarımız" %} </span></h2>
+                <h2 class="section-heading"><span style="color: rgb(122, 122, 122);">{% trans "Doktorlarımız" %} </span></h2>
             </div>
         </div>
         <div class="container">
@@ -173,6 +160,12 @@
                 {% endfor %}
 
             </div>
+        </div>
+    </section>
+    <section class="bg-body id="comment">
+        <div class="col-lg-12 text-center">
+            <h2 class="section-heading"><span style="color: rgb(122, 122, 122);">{% trans "Yorumlar" %} </span></h2>
+            <p style="color: rgb(122,122,122);">{% trans "Bizi tercih edip yorum bırakan güzide hastalarımız"%}</p>
         </div>
     </section>
     <section id="contact" style="background-image:url('../static/home/img/map-image.jpg');">
@@ -313,12 +306,13 @@
         </div>
     </div>
     {% endfor %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.js"></script>
     <script src="{% static 'home/bootstrap/js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'home/js/baguetteBox.js' %}"></script>
+    <script src="{% static 'home/js/baguetteBox.min.js' %}"></script>
     <script src="{% static 'home/js/agency.js' %} "></script>
     <script src="{% static 'home/js/Lightbox-Gallery.js' %}"></script>
     <script src="{% static 'home/js/Simple-Slider.js' %}"></script> 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.js"></script>
+    
 </body>
 
 </html>
