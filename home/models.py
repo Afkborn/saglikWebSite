@@ -1,6 +1,7 @@
 
 from django.core.validators import MaxValueValidator, MinValueValidator
-
+from django.contrib import admin
+from django.utils.html import format_html
 from django.db import models
 from ckeditor.fields import RichTextField
 # Create your models here.
@@ -103,10 +104,25 @@ class Comment(models.Model):
     author_last_name = models.CharField(max_length=30, help_text="Soyisim")
     comment_date = models.DateField(help_text="Tarih")
     photo = models.ImageField(upload_to="person_image", default= "person_image/default.png")
-    score = models.PositiveSmallIntegerField(help_text="Puan", validators=[MinValueValidator(1),MaxValueValidator(100)], default=0)
+    score = models.PositiveSmallIntegerField(help_text="Puan", validators=[MinValueValidator(0),MaxValueValidator(5)], default=0)
     comment = models.CharField(max_length=500,help_text="Yorum")
+    
     def __str__(self):
         return f"{self.author_first_name} {self.author_last_name}"
+    
+    @admin.display
+    def getScore(self):
+        scoreText = ''
+        for _ in range(self.score):
+            scoreText += "<span class='fa fa-star checked'></span>"
+        for _ in range(5-self.score):
+            scoreText += "<span class='fa fa-star'></span>"
+        print(scoreText)
+        return format_html(scoreText)
+    getScore.allow_tags = True
+        
+            
+    
     
 class HomeScreenSlide(models.Model):
     slide_name = models.CharField(max_length=250,help_text="")

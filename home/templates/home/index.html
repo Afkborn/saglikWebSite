@@ -7,8 +7,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Modelist Dent</title>
-    <link rel="shortcut icon" type="image/png" href="{% static 'home/favicon.png' %}"/>
-
+    <link rel="shortcut icon" type="image/png" href="{% static 'home/favicon.png' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.css">
     <link rel="stylesheet" href="{% static 'home/bootstrap/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'home/fonts/font-awesome.min.css' %}">
     <link rel="stylesheet" href="{% static 'home/fonts/fontawesome-all.min.css' %}">
@@ -19,14 +21,19 @@
     <link rel="stylesheet" href="{% static 'home/css/Contact-white--Gmap-styles.css' %}">
     <link rel="stylesheet" href="{% static 'home/css/Simple-Slider-Simple-Slider.css' %}">
     <link rel="stylesheet" href="{% static 'home/css/baguetteBox.min.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.css">
+    <link rel="stylesheet" href="{% static 'home/css/commentStyle.css' %}">
+    
+
 
 </head>
+
 <body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="54">
     <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav">
         <div class="container">
             <a class="navbar-brand" href="#page-top">Modelist Dent</a>
-            <button data-bs-toggle="collapse" data-bs-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <button data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                class="navbar-toggler navbar-toggler-right" type="button" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fa fa-bars"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -47,7 +54,8 @@
                         <a class="nav-link" href="#contact">{% trans "İletişim" %}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://api.whatsapp.com/send/?phone=905421135901&text&app_absent=0" target="_blank">
+                        <a class="nav-link" href="https://api.whatsapp.com/send/?phone=905421135901&text&app_absent=0"
+                            target="_blank">
                             <i class="fab fa-whatsapp" style="font-size: 20px;"></i>
                             {% trans "Whatsapp" %}
                         </a>
@@ -56,7 +64,7 @@
             </div>
         </div>
     </nav>
-    <header class="masthead" >
+    <header class="masthead">
         <!-- SLIDER YAPILACAK -->
     </header>
 
@@ -73,17 +81,19 @@
             <div class="row gx-1 gy-2 text-center justify-content-center align-items-center">
 
                 {% for service in service_list %}
-                    <div class="col-md-4">
-                        <a class="objectLink" href="{% url 'home:services' service.id %}">
-                            <img src="media/{{service.photo}}" style="width: 75px;margin-top: 20px;">
-                            <h4 class="section-heading"><strong><span style="color: rgb(122, 122, 122);">{{service.name}}</span></strong><br></h4>
-                            <p class="text-muted"><span style="color: rgb(122, 122, 122);">{{service.brief}}</span><br></p>
-                        </a>
-                    </div>
+                <div class="col-md-4">
+                    <a class="objectLink" href="{% url 'home:services' service.id %}">
+                        <img src="media/{{service.photo}}" style="width: 75px;margin-top: 20px;">
+                        <h4 class="section-heading"><strong><span
+                                    style="color: rgb(122, 122, 122);">{{service.name}}</span></strong><br></h4>
+                        <p class="text-muted"><span style="color: rgb(122, 122, 122);">{{service.brief}}</span><br></p>
+                    </a>
+                </div>
                 {% endfor %}
 
                 <div class="col-md-4">
-                    <img src="{% static 'home/img/teeth-pnijwvgonabmtp3z3wbmmmkvies4jfjppwlbyfd0oe.png' %}" style="width: 75px;margin-top: 20px;">
+                    <img src="{% static 'home/img/teeth-pnijwvgonabmtp3z3wbmmmkvies4jfjppwlbyfd0oe.png' %}"
+                        style="width: 75px;margin-top: 20px;">
                     <h4 class="section-heading">
                         <strong>
                             <span style="color: rgb(122, 122, 122);">{% trans "Çok daha fazlası..." %} </span>
@@ -93,7 +103,8 @@
                     <p class="text-muted">
                         <span style="color: rgb(122, 122, 122);">{% trans "Modelist Dent, diş estetiğindeki uzman deneyimi ve bir çok işlemi ile hizmetinizde." %} </span>
                     </p>
-                    <button onclick="location.href='services/'" class="btn btn-primary" type="button" data-bs-dismiss="modal">
+                    <button onclick="location.href='services/'" class="btn btn-primary" type="button"
+                        data-bs-dismiss="modal">
                         <span>{% trans "Bütün hizmetlerimiz için tıklayın" %}</span>
                     </button>
                 </div>
@@ -115,20 +126,29 @@
                             <h2><span style="color: rgb(122, 122, 122);">{% trans "Biz Kimiz?" %} </span></h2>
                             <p class="w-lg-50"><br><span style="color: rgb(34, 34, 34);">{% trans "Merhabalar; Kliniğimiz İstanbul-Pendik’te 2020 yılında açılmıştır. Uzman kadromuz ile sizlere en iyi hizmeti vermek için çalışıyoruz. Kliniğimizde; Kanal tedavisi, İmplant, Estetik Dolgular, Lamine, Zirconyum Kaplama, Porselen Kaplama, (Periodontoloji) Diş Eti Hastalıkları Tedavisi, Cerrahi Diş Çekimi, Diş Estetiği, diş tedavilerini başarılı bir şekilde gerçekleştiriyoruz. Kalitemizden ödün vermeden siz değerli hastalarımıza hizmet veriyoruz.Modelist hem yurtdışından hem yurtiçinden gelen hastaları için büyük kolaylıklar ve hizmetler sağlıyor." %} </span><br><br></p>
                         </div>
-                        <div class="col-auto align-self-start m-auto"><img class="img-fluid border-0" src="{% static 'home/img/Modelbina-plqzdsdvpnp2x8t30625x31hd9dmb3yaxibplq3h54.png' %}"></div>
+                        <div class="col-auto align-self-start m-auto"><img class="img-fluid border-0"
+                                src="{% static 'home/img/Modelbina-plqzdsdvpnp2x8t30625x31hd9dmb3yaxibplq3h54.png' %}">
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-12 text-center">
-                            <h2 class="section-heading"><span style="color: rgb(122, 122, 122);">{% trans "Galeri" %} </span></h2>
+                            <h2 class="section-heading"><span style="color: rgb(122, 122, 122);">{% trans "Galeri" %}
+                                </span></h2>
                         </div>
                     </div>
                     <div class="row gx-2 gy-2 row-cols-1 row-cols-md-2 row-cols-xl-3 photos" data-bss-baguettebox="">
-                        <div class="col item"><a href="{% static 'home/img/clinic/1.jpg' %}"><img class="img-fluid" src="{% static 'home/img/clinic/1.jpg' %}"></a></div>
-                        <div class="col item"><a href="{% static 'home/img/clinic/2.jpg' %}"><img class="img-fluid" src="{% static 'home/img/clinic/2.jpg' %}"></a></div>
-                        <div class="col item"><a href="{% static 'home/img/clinic/3.jpg' %}"><img class="img-fluid" src="{% static 'home/img/clinic/3.jpg' %}"></a></div>
-                        <div class="col item"><a href="{% static 'home/img/clinic/4.jpg' %}"><img class="img-fluid" src="{% static 'home/img/clinic/4.jpg' %}"></a></div>
-                        <div class="col item"><a href="{% static 'home/img/clinic/5.jpg' %}"><img class="img-fluid" src="{% static 'home/img/clinic/5.jpg' %}"></a></div>
-                        <div class="col item"><a href="{% static 'home/img/clinic/6.jpg' %}"><img class="img-fluid" src="{% static 'home/img/clinic/6.jpg' %}"></a></div>
+                        <div class="col item"><a href="{% static 'home/img/clinic/1.jpg' %}"><img class="img-fluid"
+                                    src="{% static 'home/img/clinic/1.jpg' %}"></a></div>
+                        <div class="col item"><a href="{% static 'home/img/clinic/2.jpg' %}"><img class="img-fluid"
+                                    src="{% static 'home/img/clinic/2.jpg' %}"></a></div>
+                        <div class="col item"><a href="{% static 'home/img/clinic/3.jpg' %}"><img class="img-fluid"
+                                    src="{% static 'home/img/clinic/3.jpg' %}"></a></div>
+                        <div class="col item"><a href="{% static 'home/img/clinic/4.jpg' %}"><img class="img-fluid"
+                                    src="{% static 'home/img/clinic/4.jpg' %}"></a></div>
+                        <div class="col item"><a href="{% static 'home/img/clinic/5.jpg' %}"><img class="img-fluid"
+                                    src="{% static 'home/img/clinic/5.jpg' %}"></a></div>
+                        <div class="col item"><a href="{% static 'home/img/clinic/6.jpg' %}"><img class="img-fluid"
+                                    src="{% static 'home/img/clinic/6.jpg' %}"></a></div>
                     </div>
                 </div>
             </section>
@@ -137,21 +157,22 @@
     <section class="bg-light" id="team">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2 class="section-heading"><span style="color: rgb(122, 122, 122);">{% trans "Doktorlarımız" %} </span></h2>
+                <h2 class="section-heading"><span style="color: rgb(122, 122, 122);">{% trans "Doktorlarımız" %} </span>
+                </h2>
             </div>
         </div>
         <div class="container">
             <div class="row justify-content-center align-items-center">
-                
+
                 {% for person in person_list %}
                 <div class="col-sm-4">
                     <a class="objectLink" href="#modelPerson{{person.id}}" data-bs-toggle="modal">
                         <div class="team-member">
                             <img class="rounded-circle mx-auto" src="media/{{person.photo}}">
-                            <h4> 
+                            <h4>
                                 <strong>
                                     {{person.first_name}} {{person.last_name}}<br>
-                                </strong> 
+                                </strong>
                             </h4>
                             <p class="text-muted">{{person.position}}<br></p>
                         </div>
@@ -162,10 +183,32 @@
             </div>
         </div>
     </section>
-    <section class="bg-body id="comment">
-        <div class="col-lg-12 text-center">
-            <h2 class="section-heading"><span style="color: rgb(122, 122, 122);">{% trans "Yorumlar" %} </span></h2>
-            <p style="color: rgb(122,122,122);">{% trans "Bizi tercih edip yorum bırakan güzide hastalarımız"%}</p>
+    <section class="bg-body" id = "comment">
+        <div class="divMin">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading"><span style="color: rgb(122, 122, 122);">{% trans "Yorumlar" %}</h2>
+                <p class="section-heading"><span style="color: rgb(122, 122, 122);">{% trans "Bizi tercih edip yorum bırakan güzide hastalarımız" %} </span></p>
+            </div>
+                <div class="gtco-testimonials">
+                    <div class="owl-carousel owl-carousel1 owl-theme">
+                        {% for comment in comment_list %}
+                        <div>
+                            <div class="card text-center">
+                                <h6 class="startText">{{comment.comment_date|date:"SHORT_DATE_FORMAT"}}</h6>
+                                <img class="card-img-top"src="media/{{comment.photo}}"alt="">
+                                <div class="card-body">
+                                    <h5>{{comment.author_first_name}} {{comment.author_last_name}}<br/></h5>
+                                    <p>{{comment.getScore}}</p>
+
+
+                                    <p class="card-text">{{comment.comment}}</p>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
         </div>
     </section>
     <section id="contact" style="background-image:url('../static/home/img/map-image.jpg');">
@@ -179,12 +222,17 @@
                 <div class="col-8 col-sm-4">
                     <div style="height: 100%;">
                         <div class="row" style="margin-right: 0px;margin-left: 0px;">
-                            <div class="col"><i class="fas fa-phone-alt" style="font-size: 41px;width: 100%;text-align: center;"></i>
+                            <div class="col"><i class="fas fa-phone-alt"
+                                    style="font-size: 41px;width: 100%;text-align: center;"></i>
                                 <div class="row" style="text-align: center;">
-                                    <div class="col"><a class="socialMedia" href="tel:+90 542 113 5901" style="width: 100%;">+90 (542) 113 5901</a>
-                                        <p></p><a class="socialMedia" href="tel:+90 542 113 5902" style="width: 100%;">+90 (542) 113 5902</a>
-                                        <p></p><a class="socialMedia" href="tel:+90 542 113 5903" style="width: 100%;">+90 (542) 113 5903</a>
-                                        <p></p><a class="socialMedia" href="tel:+90 216 514 9898" style="width: 100%;">+90 (216) 514 9898</a>
+                                    <div class="col"><a class="socialMedia" href="tel:+90 542 113 5901"
+                                            style="width: 100%;">+90 (542) 113 5901</a>
+                                        <p></p><a class="socialMedia" href="tel:+90 542 113 5902"
+                                            style="width: 100%;">+90 (542) 113 5902</a>
+                                        <p></p><a class="socialMedia" href="tel:+90 542 113 5903"
+                                            style="width: 100%;">+90 (542) 113 5903</a>
+                                        <p></p><a class="socialMedia" href="tel:+90 216 514 9898"
+                                            style="width: 100%;">+90 (216) 514 9898</a>
                                     </div>
                                 </div>
                             </div>
@@ -193,16 +241,22 @@
                             <div class="col align-self-center">
                                 <div class="row gx-4 gy-1" style="margin: 0px;margin-top: 25%;text-align: center;">
                                     <div class="col">
-                                        <a class="socialMedia" href="https://www.facebook.com/MODELDENTISTANBUL/" target="_blank">
+                                        <a class="socialMedia" href="https://www.facebook.com/MODELDENTISTANBUL/"
+                                            target="_blank">
                                             <i class="fab fa-facebook" style="font-size: 32px;"></i>
                                         </a>
                                     </div>
-                                    <div class="col"><a class="socialMedia" href="#" target=""><i class="fab fa-twitter" style="font-size: 32px;"></i></a></div>
-                                    <div class="col"><a class="socialMedia" href="https://www.instagram.com/modeldentistanbul/" target="_blank"><i class="fab fa-instagram" style="font-size: 32px;"></i></a></div>
-                                    <div class="col"><a class="socialMedia" href="#" target=""><i class="fab fa-youtube" style="font-size: 32px;"></i></a></div>
+                                    <div class="col"><a class="socialMedia" href="#" target=""><i class="fab fa-twitter"
+                                                style="font-size: 32px;"></i></a></div>
+                                    <div class="col"><a class="socialMedia"
+                                            href="https://www.instagram.com/modeldentistanbul/" target="_blank"><i
+                                                class="fab fa-instagram" style="font-size: 32px;"></i></a></div>
+                                    <div class="col"><a class="socialMedia" href="#" target=""><i class="fab fa-youtube"
+                                                style="font-size: 32px;"></i></a></div>
                                 </div>
                             </div>
-                            <div class="col" style="margin-top: 10px;"><i class="fas fa-mail-bulk" style="width: 100%;text-align: center;font-size: 33px;height: 32px;"></i>
+                            <div class="col" style="margin-top: 10px;"><i class="fas fa-mail-bulk"
+                                    style="width: 100%;text-align: center;font-size: 33px;height: 32px;"></i>
                                 <p></p><a class="socialMedia" href="mailto:info@modelistdent.com">{% trans "Bilgi almak için tıklayın" %} &nbsp;</a>
                                 <p></p><a class="socialMedia" href="mailto:randevu@modelistdent.com">{% trans "Randevu almak için tıklayın" %} </a>
                             </div>
@@ -210,8 +264,11 @@
                     </div>
                 </div>
                 <div class="col-9 col-sm-4">
-                    <div style="height: 100%;width: 100%;"><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12058.593785852067!2d29.1575522!3d40.9234535!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb35592ca6dd4e838!2sModelist%20Dent!5e0!3m2!1str!2str!4v1658165239631!5m2!1str!2str" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-</div>
+                    <div style="height: 100%;width: 100%;"><iframe
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12058.593785852067!2d29.1575522!3d40.9234535!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb35592ca6dd4e838!2sModelist%20Dent!5e0!3m2!1str!2str!4v1658165239631!5m2!1str!2str"
+                            width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
                 </div>
             </div>
         </div>
@@ -242,7 +299,8 @@
                                 <p class="item-intro">
                                     ({{person.position}})
                                 </p>
-                                <img class="img-fluid d-block mx-auto" src="media/{{person.photo}}" width="300" height="300"/>
+                                <img class="img-fluid d-block mx-auto" src="media/{{person.photo}}" width="300"
+                                    height="300" />
 
                                 {% if person.education_set.all %}
                                 <h4>
@@ -251,7 +309,7 @@
                                     </b>
                                 </h4>
                                 {% for egitim in person.education_set.all %}
-                                    {{ egitim }} <br>
+                                {{ egitim }} <br>
                                 {% endfor %}
                                 <p></p>
                                 {% endif %}
@@ -259,7 +317,7 @@
                                 {% if person.jobexperience_set.all %}
                                 <h4>
                                     <b>
-                                        <span style="color: rgb(122, 122, 122);">{% trans "İş Tecrübesi" %} </span> 
+                                        <span style="color: rgb(122, 122, 122);">{% trans "İş Tecrübesi" %} </span>
                                     </b>
                                 </h4>
                                 {% for job in person.jobexperience_set.all %}
@@ -271,9 +329,10 @@
                                 {% if person.clinicalapplications_set.all %}
                                 <h4>
                                     <b>
-                                        <span style="color: rgb(122, 122, 122);">{% trans "Klinik Uygulamalar" %} </span> 
+                                        <span style="color: rgb(122, 122, 122);">{% trans "Klinik Uygulamalar" %}
+                                        </span>
                                     </b>
-                                
+
                                 </h4>
                                 {% for clinical_app in person.clinicalapplications_set.all %}
                                 {{ clinical_app }} <br>
@@ -284,9 +343,9 @@
                                 {% if person.certificate_set.all %}
                                 <h4>
                                     <b>
-                                        <span style="color: rgb(122, 122, 122);">{% trans "Sertifikalar" %} </span> 
+                                        <span style="color: rgb(122, 122, 122);">{% trans "Sertifikalar" %} </span>
                                     </b>
-                                    
+
                                 </h4>
 
                                 {% for certificate in person.certificate_set.all %}
@@ -306,13 +365,15 @@
         </div>
     </div>
     {% endfor %}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script src="{% static 'home/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="{% static 'home/js/baguetteBox.min.js' %}"></script>
     <script src="{% static 'home/js/agency.js' %} "></script>
     <script src="{% static 'home/js/Lightbox-Gallery.js' %}"></script>
-    <script src="{% static 'home/js/Simple-Slider.js' %}"></script> 
-    
+    <script src="{% static 'home/js/Simple-Slider.js' %}"></script>
+    <script src="{% static 'home/js/commentScript.js' %}"></script>
 </body>
 
 </html>
