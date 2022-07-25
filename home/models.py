@@ -16,7 +16,7 @@ def get_default_lang():
     try:
         return Language.objects.get(pk=1)
     except:
-        defaultLang = Language("Türkçe","tr")
+        defaultLang = Language(name="Türkçe",abbreviated_name="tr")
         defaultLang.save()
         return Language.objects.get(abbreviated_name="tr")
 
