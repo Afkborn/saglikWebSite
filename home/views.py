@@ -15,8 +15,9 @@ def index(request):
         web_lang = Language.objects.filter(abbreviated_name=request.LANGUAGE_CODE)[0]
         
     home_screen_slide_list = HomeScreenSlide.objects.filter(lang=web_lang.id)
+    service_list = Service.objects.filter(show_home_page=True).filter(lang=web_lang.id)
+    gallery_list = Gallery.objects.filter(lang=web_lang.id)
     person_list = Person.objects.filter(lang=web_lang.id).order_by('first_name')
-    service_list = Service.objects.filter(show_home_screen=True).filter(lang=web_lang.id)
     comment_list = Comment.objects.filter(show_home_page=True).order_by('comment_date')
     if (service_list.count() > 6):
         service_list = service_list.order_by('?')
@@ -26,6 +27,7 @@ def index(request):
     context = {
         "home_screen_slide_list" : home_screen_slide_list,
         "service_list" : service_list,
+        "gallery_list" : gallery_list,
         "person_list" : person_list,
         "comment_list" : comment_list,
     }

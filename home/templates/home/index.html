@@ -133,18 +133,19 @@
                         </div>
                     </div>
                     <div class="row gx-2 gy-2 row-cols-1 row-cols-md-2 row-cols-xl-3 photos" data-bss-baguettebox="">
-                        <div class="col item"><a href="{% static 'home/img/clinic/1.jpg' %}"><img class="img-fluid"
-                                    src="{% static 'home/img/clinic/1.jpg' %}"></a></div>
-                        <div class="col item"><a href="{% static 'home/img/clinic/2.jpg' %}"><img class="img-fluid"
-                                    src="{% static 'home/img/clinic/2.jpg' %}"></a></div>
-                        <div class="col item"><a href="{% static 'home/img/clinic/3.jpg' %}"><img class="img-fluid"
-                                    src="{% static 'home/img/clinic/3.jpg' %}"></a></div>
-                        <div class="col item"><a href="{% static 'home/img/clinic/4.jpg' %}"><img class="img-fluid"
-                                    src="{% static 'home/img/clinic/4.jpg' %}"></a></div>
-                        <div class="col item"><a href="{% static 'home/img/clinic/5.jpg' %}"><img class="img-fluid"
-                                    src="{% static 'home/img/clinic/5.jpg' %}"></a></div>
-                        <div class="col item"><a href="{% static 'home/img/clinic/6.jpg' %}"><img class="img-fluid"
-                                    src="{% static 'home/img/clinic/6.jpg' %}"></a></div>
+                        {% for gallery in gallery_list %}
+                        <div class="col item">
+                            {% if gallery.gallery_desc %}
+                            <a href="media/{{gallery.photo}}"  data-caption="{{gallery.gallery_desc}}">
+                                <img class="img-fluid" src="media/{{gallery.photo}}" alt="{{gallery.gallery_name}}">
+                            </a>
+                            {% else %}
+                            <a href="media/{{gallery.photo}}">
+                                <img class="img-fluid" src="media/{{gallery.photo}}" alt="{{gallery.gallery_name}}">
+                            </a>
+                            {% endif %}
+                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </section>

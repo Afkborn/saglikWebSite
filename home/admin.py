@@ -27,7 +27,7 @@ admin.site.register(Person,PersonAdmin)
 #SERVICE
 class ServiceAdmin(admin.ModelAdmin):
     list_display = ('name', 'brief','lang')
-    list_filter = ("lang","show_home_screen")
+    list_filter = ("lang","show_home_page")
     search_fields = ['name']
 admin.site.register(Service, ServiceAdmin)
 
@@ -71,3 +71,12 @@ class HomeScreenSlideAdmin(admin.ModelAdmin):
     search_fields = ['slide_name']
     
 admin.site.register(HomeScreenSlide,HomeScreenSlideAdmin)
+
+
+#Gallery
+class GalleryAdmin(admin.ModelAdmin):
+    list_display = ('gallery_name','lang','show_home_page')
+    list_filter = ("lang",)
+    search_fields = ['gallery_name','gallery_desc']
+    
+admin.site.register(Gallery,GalleryAdmin)
