@@ -8,6 +8,11 @@
     margin: 10px;
     color: #666666;
 }
+.endText{
+  position: absolute;
+  float: right;
+  color: #666666;
+}
 
 
 .checked {

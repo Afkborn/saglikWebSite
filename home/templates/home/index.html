@@ -196,18 +196,19 @@
                             <div class="card text-center">
                                 <h6 class="startText">{{comment.comment_date|date:"SHORT_DATE_FORMAT"}}</h6>
                                 {% if comment.is_google_comment %}
-                                <img class="card-img-top"src="{{comment.photo}}"alt="">
+                                    <img class="card-img-top "src="{{comment.photo}}">
                                 {% else %}
-                                    <img class="card-img-top"src="media/{{comment.photo}}"alt="">
+                                    <img class="card-img-top"src="media/{{comment.photo}}">
                                 {% endif %}
                                 <div class="card-body">
                                     <h5>{{comment.author_first_name}} {{comment.author_last_name}}<br/></h5>
                                     <p>{{comment.getScore}}</p>
-
-
+                                    {% if comment.is_google_comment %}
+                                        <p class="card-text">{{comment.comment}} <br> from Google </p>
+                                    {% else %}
                                     <p class="card-text">{{comment.comment}}</p>
+                                    {% endif %}
                                 </div>
-                                
                             </div>
                         </div>
                         {% endfor %}

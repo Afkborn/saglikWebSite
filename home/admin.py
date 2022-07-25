@@ -57,6 +57,7 @@ class CommentAdmin(DjangoObjectActions,admin.ModelAdmin):
         else:
             messages.add_message(request, messages.INFO, f'Yeni mesaj yok.')
     get_comment_from_Google.label = "Get Comment from Google"
+    
     list_display = ('author_first_name', 'author_last_name', 'score', 'is_google_comment', 'show_home_page')
     list_filter = ('show_home_page','is_google_comment')
     search_fields = ['author_first_name','author_last_name']
