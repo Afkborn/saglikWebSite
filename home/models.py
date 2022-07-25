@@ -108,7 +108,7 @@ class Comment(models.Model):
     photo = models.ImageField(upload_to="person_image", default= "person_image/default.png")
     score = models.PositiveSmallIntegerField(help_text="Puan", validators=[MinValueValidator(0),MaxValueValidator(5)], default=0)
     comment = models.CharField(max_length=500,help_text="Yorum")
-
+ 
     def __str__(self):
         return f"{self.author_first_name} {self.author_last_name}"
     
@@ -119,7 +119,6 @@ class Comment(models.Model):
             scoreText += "<span class='fa fa-star checked'></span>"
         for _ in range(5-self.score):
             scoreText += "<span class='fa fa-star'></span>"
-        print(scoreText)
         return format_html(scoreText)
     getScore.allow_tags = True
         

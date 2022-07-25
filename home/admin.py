@@ -39,10 +39,29 @@ class LanguageAdmin(admin.ModelAdmin):
 admin.site.register(Language,LanguageAdmin)
 
 #COMMENT
-class CommentAdmin(admin.ModelAdmin):
-    list_display = ('author_first_name', 'author_last_name', 'score')
+from django_object_actions import DjangoObjectActions
+from datetime import datetime
+from home.google.getComment import getCommentFromGoogle
+from django.contrib import messages
+class CommentAdmin(DjangoObjectActions,admin.ModelAdmin):
+    def get_comment_from_Google(modeladmin, request, queryset):
+        new_comment_count = 0
+        comment_list = getCommentFromGoogle()
+        for i in comment_list:
+            comment_list = Comment.objects.filter(comment_date=i.comment_date,author_first_name=i.author_first_name,author_last_name=i.author_last_name)
+            if (len(comment_list) == 0):
+                i.save()
+                new_comment_count += 1
+        if new_comment_count > 0:
+            messages.add_message(request, messages.INFO, f'Toplam {new_comment_count} yeni yorum eklendi.')
+        else:
+            messages.add_message(request, messages.INFO, f'Yeni mesaj yok.')
+    get_comment_from_Google.label = "Get Comment from Google"
+    list_display = ('author_first_name', 'author_last_name', 'score', 'is_google_comment', 'show_home_page')
     list_filter = ('show_home_page','is_google_comment')
     search_fields = ['author_first_name','author_last_name']
+    changelist_actions = ('get_comment_from_Google', )
+
     
 admin.site.register(Comment,CommentAdmin)
 

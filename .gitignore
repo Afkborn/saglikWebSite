@@ -9,3 +9,6 @@ media/
 SECRETS.py
 
 *.pyc
+
+
+test.py
