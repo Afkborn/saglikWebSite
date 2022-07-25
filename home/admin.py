@@ -21,7 +21,6 @@ class PersonAdmin(admin.ModelAdmin):
     list_display = ('first_name', 'last_name','position', 'lang')
     list_filter = ("lang",)
     search_fields = ['first_name', 'last_name']
-#PERSON EDUCATIN, CLINICALAPPLICATIONS, CERTIFICATE, JOBEXPERIENCE
 admin.site.register(Person,PersonAdmin)
 
 
@@ -40,7 +39,6 @@ admin.site.register(Language,LanguageAdmin)
 
 #COMMENT
 from django_object_actions import DjangoObjectActions
-from datetime import datetime
 from home.google.getComment import getCommentFromGoogle
 from django.contrib import messages
 class CommentAdmin(DjangoObjectActions,admin.ModelAdmin):
@@ -62,8 +60,6 @@ class CommentAdmin(DjangoObjectActions,admin.ModelAdmin):
     list_filter = ('show_home_page','is_google_comment')
     search_fields = ['author_first_name','author_last_name']
     changelist_actions = ('get_comment_from_Google', )
-
-    
 admin.site.register(Comment,CommentAdmin)
 
 

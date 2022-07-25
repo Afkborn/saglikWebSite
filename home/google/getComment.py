@@ -2,7 +2,9 @@ from Health.SECRETS import *
 import requests
 from home.models import Comment
 from datetime import datetime
+
 def getCommentFromGoogle():
+    """ GET COMMENT FROM GOOGLE, \nPlace IDs uniquely identify a place in the Google Places database and on Google Maps, GOOGLE_KEY = Google API Key """
     commentList = []
     response = requests.get(f'https://maps.googleapis.com/maps/api/place/details/json?place_id={PLACE_ID}&key={GOOGLE_KEY}') 
     responseJson = response.json()
@@ -29,6 +31,3 @@ def getCommentFromGoogle():
             
         
     
-
-
-# GET GOOGLE COMMENT AND ADD WEBSITE EVERY WEEK

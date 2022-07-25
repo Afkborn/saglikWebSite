@@ -9,6 +9,7 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('services/<int:service_id>/', views.services, name='services'),
     path('services/', views.servicesHome, name='services'),
+    
 ]
 
 if settings.DEBUG:

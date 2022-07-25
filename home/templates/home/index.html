@@ -1,5 +1,6 @@
 {% load static %}
 {% load i18n %}
+{% load sass_tags %}
 <!DOCTYPE html>
 <html lang="">
 
@@ -19,11 +20,8 @@
     <link rel="stylesheet" href="{% static 'home/css/Contact-white--Gmap.css' %}">
     <link rel="stylesheet" href="{% static 'home/css/Contact-white--Gmap-Contact.css' %}">
     <link rel="stylesheet" href="{% static 'home/css/Contact-white--Gmap-styles.css' %}">
-    <link rel="stylesheet" href="{% static 'home/css/Simple-Slider-Simple-Slider.css' %}">
     <link rel="stylesheet" href="{% static 'home/css/baguetteBox.min.css' %}">
     <link rel="stylesheet" href="{% static 'home/css/commentStyle.css' %}">
-    
-
 
 </head>
 
@@ -65,7 +63,7 @@
         </div>
     </nav>
     <header class="masthead">
-        <!-- SLIDER YAPILACAK -->
+
     </header>
 
     <section class="bg-light" id="services">
@@ -92,8 +90,6 @@
                 {% endfor %}
 
                 <div class="col-md-4">
-                    <img src="{% static 'home/img/teeth-pnijwvgonabmtp3z3wbmmmkvies4jfjppwlbyfd0oe.png' %}"
-                        style="width: 75px;margin-top: 20px;">
                     <h4 class="section-heading">
                         <strong>
                             <span style="color: rgb(122, 122, 122);">{% trans "Çok daha fazlası..." %} </span>
@@ -377,7 +373,6 @@
     <script src="{% static 'home/js/baguetteBox.min.js' %}"></script>
     <script src="{% static 'home/js/agency.js' %} "></script>
     <script src="{% static 'home/js/Lightbox-Gallery.js' %}"></script>
-    <script src="{% static 'home/js/Simple-Slider.js' %}"></script>
     <script src="{% static 'home/js/commentScript.js' %}"></script>
 </body>
 
